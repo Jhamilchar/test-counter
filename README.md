@@ -1,38 +1,117 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Installation
 
-## Getting Started
+After downloading the file from Coming-soon
+, You will find Deadline.zip file. Then unzip the Deadline.zip and run the following commands on Deadline folder to get started with the project.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+// For starting NextJs Server run
+yarn nextjs-dev
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+NextJs Server will start in `localhost:3000`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Available routes are below
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+/twenty-two
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br/><br/><br/><br/><br/><br/>
 
-## Learn More
+# Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+/common [All the common resource throughout the project]
+	/data
+		/social-share
+		/translation
+	/demoSwitcher
+	/hooks
+	/LanguageSwitcher
+	/static
+	/theme
+	/ui
+/components [Components throughout the project ]
+/nextjs [NextJs dependend component, pages and containers]
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Follow the below procedure to go with the development process.
 
-## Deploy on Vercel
+## NextJs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you want to develop only for gatsbyjs then then you don't need the `/gatsbyjs` folder. You can delete the folder.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Follow the same steps for nextjs on `/nextjs` folder. Except starting the server for nextjs you have to run `yarn nextjs-dev` and the server will start on `locahost:3000`.
+
+# Data
+
+Theres two folders in `/common/data` folder
+
+### /social-share
+
+`/social-share` folder contains template specific social share data like `/social-share/one.js` contains data for `/pages/one.js` template
+
+### /translation
+
+In this folder, you will find all the translations that we have used in our template . We have used `react-intl` (https://github.com/formatjs/react-intl) to Internationalise our template . You can translate the template into any language you want. We have already given support for 6 languages. They are English(en), Arabic(ar), German(de), Spanish(es), Chinese(zh) and Hebrew(he).
+
+We have also provided Right to Left(RTL) alignment supports.
+
+# SendGrid Integration
+
+We have provided support for SendGrid (https://sendgrid.com/) integration for email delivery/ Newsletter/ Contact form.
+
+<br/><br/><br/><br/><br/><br/>
+
+## NextJs
+
+1. Go to , `/nextjs/next.config.js` find the code section and put your SendGrid Api Key there.
+
+```
+const nextConfig = {
+	env: { SENDGRID_API_KEY: 'Put your SendGrid Api Key here' }
+}
+```
+
+NOTE: We have commented out the sendgrid implementation, you will able to use that code that way or you can run separate node js server to send it to your sendgrid. it's upto you.
+
+# Deployment
+
+For deploying your final project you have to build your project first. To build the project you have to follow below procedure.
+
+### NextJs Build
+
+To build the nextjs version run below commands.
+
+```
+yarn nextjs-build
+
+// To check the build version locally run below command
+// Not necessary if you don't want to check on your local.
+yarn nextjs-serve
+```
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+## Deployment Support
+
+```
+
+### NextJs on Vercel
+
+For deploying nextjs on now.sh you have rename `next.vercel.json` to `vercel.json`. Now run below command after building the project.
+
+```
+
+vercel
+
+```
+
+> **Make sure you have `vercel-cli` installed in your system.**
+```
