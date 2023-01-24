@@ -14,12 +14,6 @@ yarn nextjs-dev
 
 NextJs Server will start in `localhost:3000`
 
-Available routes are below
-
-```
-/twenty-two
-```
-
 <br/><br/><br/><br/><br/><br/>
 
 # Folder Structure
